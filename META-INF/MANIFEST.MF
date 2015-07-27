@@ -1,17 +1,17 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1436358187823
-Build-Jdk: 1.8.0_45
-Built-By: fabio
+Bnd-LastModified: 1438016360943
+Build-Jdk: 1.7.0_45
+Built-By: bluewind
 Bundle-Category: Automation@Home Application
 Bundle-ManifestVersion: 2
 Bundle-Name: Greenathome Appliance
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-SymbolicName: org.energy-home.jemma.osgi.ah.greenathome
 Bundle-Vendor: Telecom Italia
-Bundle-Version: 2.1.20
+Bundle-Version: 2.1.21
 Created-By: Apache Maven Bundle Plugin
 Export-Package: org.energy_home.jemma.ah.greenathome;uses:="org.energy_h
- ome.jemma.ah.hac,org.energy_home.jemma.ah.hac.lib";version="2.1.20"
+ ome.jemma.ah.hac,org.energy_home.jemma.ah.hac.lib";version="2.1.21"
 Import-Package: org.slf4j;version="[1.6,2)",org.energy_home.jemma.ah.clu
  ster.ah;version="[3.0,4)",org.energy_home.jemma.ah.cluster.zigbee.custo
  m;version="[3.0.0,3.1.0)",org.energy_home.jemma.ah.cluster.zigbee.eh;ve
