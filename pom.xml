@@ -27,7 +27,7 @@
 	<name>Greenathome Appliance</name>
 	
 	<properties>
-	
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<!-- Internal dependencies version properties -->
 		
 		<org.energy-home.jemma.osgi.ah.adapter.http.version>2.0.4</org.energy-home.jemma.osgi.ah.adapter.http.version>
