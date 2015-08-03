@@ -15,7 +15,6 @@
  */
 package org.energy_home.jemma.ah.greenathome;
 
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Dictionary;
@@ -35,25 +34,27 @@ import org.energy_home.jemma.ah.hac.lib.AttributeValue;
 public interface GreenAtHomeApplianceService {
 
 	/*
-	public AttributeValue getAttribute(String peerAppliancePid, String name) throws ApplianceException, ServiceClusterException,
-			Exception;
-*/
+	 * public AttributeValue getAttribute(String peerAppliancePid, String name)
+	 * throws ApplianceException, ServiceClusterException, Exception;
+	 */
 	public AttributeValue getAttribute(String name) throws Exception;
 
 	public void setAttribute(String name, Object value) throws Exception;
 
 	public IAppliance[] getDevices();
 
-	//public Vector getInfos();
-	
-	//added for demo
-	//public Vector getInfosDemo();
+	// public Vector getInfos();
+
+	// added for demo
+	// public Vector getInfosDemo();
 
 	public ArrayList getAppliancesConfigurations() throws ApplianceException, ServiceClusterException;
-	
-	//public ArrayList<Hashtable<String, String>> getNoServerCustomDevice() throws ApplianceException, ServiceClusterException;
 
-	//public Hashtable getInfo(IAppliance peerAppliance) throws ApplianceException, ServiceClusterException;
+	// public ArrayList<Hashtable<String, String>> getNoServerCustomDevice()
+	// throws ApplianceException, ServiceClusterException;
+
+	// public Hashtable getInfo(IAppliance peerAppliance) throws
+	// ApplianceException, ServiceClusterException;
 
 	public Hashtable getApplianceConfiguration(String appliancePid) throws ApplianceException, ServiceClusterException;
 
@@ -74,9 +75,11 @@ public interface GreenAtHomeApplianceService {
 	public void removeDevice(String appliancePid) throws ApplianceException;
 
 	public boolean setDeviceState(IAppliance peerAppliance, int state);
+
 	public boolean setDeviceState(IAppliance peerAppliance, int state, short value);
 
 	public int getDeviceState(IAppliance peerAppliance) throws ApplianceException, ServiceClusterException;
+
 	public int getDeviceState(IAppliance peerAppliance, int state) throws ApplianceException, ServiceClusterException;
 
 	public Object getObjectByPid(String pid);
@@ -183,8 +186,7 @@ public interface GreenAtHomeApplianceService {
 	 * @throws Exception
 	 *             In case of error.
 	 */
-	List getAttributeData(String appliancePid, String attributeName, long startTime, long endTime, int resolution,
-			boolean fitResolution, int processType) throws Exception;
+	List getAttributeData(String appliancePid, String attributeName, long startTime, long endTime, int resolution, boolean fitResolution, int processType) throws Exception;
 
 	/**
 	 * Retrieve measurements related to a specific attribute for a specific time
@@ -194,8 +196,7 @@ public interface GreenAtHomeApplianceService {
 	 * 
 	 * @throws Exception
 	 */
-	Map getAttributeData(String attributeName, long startTime, long endTime, int resolution, boolean fitResolution, int processType)
-			throws Exception;
+	Map getAttributeData(String attributeName, long startTime, long endTime, int resolution, boolean fitResolution, int processType) throws Exception;
 
 	/**
 	 * Returns the forecasts for the specified attributeName of the appliance
@@ -250,87 +251,87 @@ public interface GreenAtHomeApplianceService {
 	public long currentTimeMillis();
 
 	public Long getInitialConfigurationTime();
-	
-	
-	//TODO: check merge, methods below not in 3.3.0
+
+	// TODO: check merge, methods below not in 3.3.0
 	/*
 	 * 
 	 * 
 	 * METODI AGGIUNTI INTECS
-	 * 
-	 * 
 	 */
-	
+
 	public Hashtable getDeviceClusters(String appliancePid);
-	
+
 	public ArrayList getCategoriesWithPid() throws ApplianceValidationException;
-	
-	//public Hashtable getInfoNew(IAppliance peerAppliance) throws ApplianceException, ServiceClusterException;
-	
-//	public Vector getInfos();
-	
-	
+
+	// public Hashtable getInfoNew(IAppliance peerAppliance) throws
+	// ApplianceException, ServiceClusterException;
+
+	// public Vector getInfos();
+
 	/**
 	 * Methods for the LevelControl cluster
 	 * 
 	 */
 	public short levelControlGetCurrentValue(String appliancePid);
-	
+
 	public boolean levelControlExecMoveToLevelWithOnOff(String appliancePid, short Level, int TransitionTime);
-	
+
 	public boolean levelControlExecMoveToLevel(String appliancePid, short Level, int TransitionTime);
-	
+
 	public boolean levelControlExecStopWithOnOff(String appliancePid);
-	
+
 	/**
 	 * Methods for the ColorControl cluster
 	 * 
 	 */
 	public boolean colorControlMoveToColorHSL(String appliancePid, short hue, short saturation, short level, int transitionTime);
-	
+
 	public boolean colorControlMoveToColorHS(String appliancePid, short hue, short saturation, int transitionTime);
-	
+
 	public Hashtable colorControlGetColorHSL(String appliancePid);
-	
+
 	public Hashtable colorControlGetColorHS(String appliancePid);
-	
-	public boolean colorControlMoveToColorXYL(String appliancePid, int X,int Y,short level, int transitionTime);
-	
+
+	public boolean colorControlMoveToColorXYL(String appliancePid, int X, int Y, short level, int transitionTime);
+
 	/**
 	 * Methods for the ApplianceControl cluster
 	 * 
 	 */
 	public int applianceControlGetStartTime(String appliancePid);
-	
+
 	public int applianceControlGetFinishTime(String appliancePid);
-	
+
 	public int applianceControlGetRemainingTime(String appliancePid);
-	
-//	public boolean applianceControlExecCommandExecution(String appliancePid, short CommandId);
-	
+
+	// public boolean applianceControlExecCommandExecution(String appliancePid,
+	// short CommandId);
+
 	public Hashtable applianceControlExecSignalState(String appliancePid);
-	
+
 	public short applianceControlGetCycleTarget0(String appliancePid);
-	
+
 	public short applianceControlGetCycleTarget1(String appliancePid);
-	
+
 	public int applianceControlGetTemperatureTarget0(String appliancePid);
-	
+
 	public int applianceControlGetTemperatureTarget1(String appliancePid);
-	
-//	public boolean applianceControlExecWriteFunctions(String appliancePid,WriteAttributeRecord[] WriteAttributeRecords);
-	
-	
+
+	// public boolean applianceControlExecWriteFunctions(String
+	// appliancePid,WriteAttributeRecord[] WriteAttributeRecords);
+
 	public boolean setDeviceState(String appliancePid, int state);
+
 	public boolean setDeviceState(String appliancePid, int state, short value);
-	
+
 	public int getDeviceState(String appliancePid) throws ApplianceException, ServiceClusterException;
+
 	public int getDeviceState(String appliancePid, int state) throws ApplianceException, ServiceClusterException;
-	
+
 	public Hashtable testFunction(String appliancePid, String p1, int p2, int p3);
-	
+
 	public List getDailyPVForecast();
-	
+
 	public String getDailyPVForecastDebug();
-	
+
 }
